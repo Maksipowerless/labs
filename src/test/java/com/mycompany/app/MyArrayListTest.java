@@ -2,6 +2,8 @@ package com.mycompany.app;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 import com.mycompany.app.java.lab1.MyArrayList;
@@ -63,9 +65,6 @@ public class MyArrayListTest {
 		arr.add("hello");
 		arr.add("world");
 		arr.add("java");
-		System.out.println(arr.get(0));
-		System.out.println(arr.get(1));
-		System.out.println(arr.get(2));
 		assertTrue(arr.size() == 3 && arr.remove("world") && arr.size() == 2 && arr.get(1).equals("java"));
 	}
 
@@ -75,17 +74,24 @@ public class MyArrayListTest {
 		arr.add(5);
 		arr.add(4);
 		arr.add(1);
-		assertTrue(arr.set(0, 4) == 4);
+		assertTrue(arr.set(0, 4).equals(4));
 	}
 
 	@Test
 	public void resize() {
 		MyArrayList<Integer> arr = new MyArrayList<Integer>();
 		arr.add(5);
-		assertTrue(arr.getCapacity() == 2);
 		arr.add(4);
-		arr.add(1);
-		assertTrue(arr.getCapacity() == 5);
+		arr.add(14);
+		arr.add(124);
+		arr.add(3253);
+		arr.add(56);
+		arr.add(2353);
+		arr.add(463);
+		arr.add(314);
+		arr.add(53);
+		arr.add(31);
+		assertTrue(arr.getCapacity() == 15);
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.mycompany.app.java.lab1;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -13,7 +14,7 @@ public class MyArrayList<T> implements List<T> {
 
 	public MyArrayList() {
 		size = 0;
-		capacity = 2;
+		capacity = 10;
 		data = new Object[capacity];
 	}
 
@@ -30,16 +31,9 @@ public class MyArrayList<T> implements List<T> {
 
 	public void resize() {
 		if (size == capacity) {
-			int newcapacity = (int) (size + size * 1.5);
-			Object temp[] = new Object[newcapacity];
-
-			for (int i = 0; i < size; i++)
-				temp[i] = data[i];
-
-			data = new Object[newcapacity];
-			for (int i = 0; i < size; i++)
-				data[i] = temp[i];
-
+			int newcapacity = (int) (size + size * 0.5);
+			Object temp[] = Arrays.copyOf(this.data, size);
+			this.data = Arrays.copyOf(temp,newcapacity);
 			capacity = newcapacity;
 		}
 	}
@@ -89,10 +83,8 @@ public class MyArrayList<T> implements List<T> {
 			temp[i] = this.data[j];
 			j++;
 		}
-
-		for (int i = 0; i < size; i++)
-			this.data[i] = temp[i];
-
+		
+		this.data = Arrays.copyOf(temp, size);
 		return b;
 	}
 
@@ -107,9 +99,7 @@ public class MyArrayList<T> implements List<T> {
 		for (int i = num; i < size - 1; i++)
 			temp[i] = data[i + 1];
 
-		for (int i = 0; i < size; i++)
-			data[i] = temp[i];
-
+		data = Arrays.copyOf(temp, size);
 		size--;
 		return (T) tob;
 	}
