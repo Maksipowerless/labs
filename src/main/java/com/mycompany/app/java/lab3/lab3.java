@@ -1,9 +1,10 @@
-package com.mycompany.app.java.lab1;
+package com.mycompany.app.java.lab3;
 
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 class UsefulCode {
 	public UsefulCode(int num, ArrayList<String> urls) {
@@ -40,10 +41,14 @@ class MyThread implements Runnable {
 	int num;
 	ArrayList<String> data = new ArrayList<String>();
 
-	MyThread(int num, ArrayList<String> urls) {
+	MyThread(int num, ArrayList<String> urls, int s, int f) {
 		this.num = num;
-		data = urls;
-		System.out.println("constructor " + num + " " + data);
+		int START =s;
+		for(int i=0; i< f-s; i++)
+		{
+			data.add(urls.get(START));
+			START++;
+		}
 	}
 
 	public void run() {
@@ -51,61 +56,167 @@ class MyThread implements Runnable {
 	}
 }
 
-// 1 thread - 24516 seconds
-// 2 thread - 14809 seconds
-// 4 thread - 9155 seconds
 public class lab3 {
 	public static void main(String[] args) throws IOException, InterruptedException {
 
 		ArrayList<String> webs = new ArrayList<String>();
-		webs.add("onet.pl");
-		webs.add("doubleclick.net");
-		webs.add("avito.ru");
-		webs.add("globo.com");
-		webs.add("ebay.co.uk");
-		webs.add("twitch.tv");
-		MyThread sm = new MyThread(1, webs);
-
-		ArrayList<String> webs1 = new ArrayList<String>();
-		webs1.add("amazon.com");
-		webs1.add("wikipedia.org");
-		webs1.add("twitter.com");
-		webs1.add("live.com");
-		webs1.add("taobao.com");
-		webs1.add("bing.com");
-		MyThread sm2 = new MyThread(2, webs1);
-
-		ArrayList<String> webs2 = new ArrayList<String>();
-		webs2.add("linkedin.com");
-		webs2.add("reddit.com");
-		webs2.add("ebay.com");
-		webs2.add("accuweather.com");
-		webs2.add("avito.ru");
-		webs2.add("vk.com");
-		MyThread sm3 = new MyThread(3, webs2);
-
-		ArrayList<String> webs3 = new ArrayList<String>();
-		webs3.add("minobr.khb.ru");
-		webs3.add("minomos.ru");
-		webs3.add("vlgregedu.ru");
-		webs3.add("omsk.edu.ru");
-		webs3.add("webinar.pgsga.ru");
-		webs3.add("edu-murman.ru");
-		MyThread sm4 = new MyThread(4, webs3);
-
-		Thread th1 = new Thread(sm);
-		Thread th2 = new Thread(sm2);
-		Thread th3 = new Thread(sm3);
-		Thread th4 = new Thread(sm4);
-
-		th1.start();
-		th2.start();
-		th3.start();
-		th4.start();
-
-		th1.join();
-		th2.join();
-		th3.join();
-		th4.join();
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+		webs.add("vk.com");
+//		webs.add("onet.pl");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("doubleclick.net");
+//		webs.add("avito.ru");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("globo.com");
+//		webs.add("ebay.co.uk");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("twitch.tv");
+//		webs.add("vk.com");
+//		webs.add("amazon.com");
+//		webs.add("wikipedia.org");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("twitter.com");
+//		webs.add("live.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("taobao.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("bing.com");
+//		webs.add("linkedin.com");
+//		webs.add("reddit.com");
+//		webs.add("ebay.com");
+//		webs.add("accuweather.com");
+//		webs.add("avito.ru");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("minomos.ru");
+//		webs.add("vk.com");
+//		webs.add("vlgregedu.ru");
+//		webs.add("vk.com");
+//		webs.add("omsk.edu.ru");
+//		webs.add("vk.com");
+//		webs.add("webinar.pgsga.ru");
+//		webs.add("vk.com");
+//		webs.add("edu-murman.ru");
+//		webs.add("vk.com");
+//		webs.add("twitch.tv");
+//		webs.add("vk.com");
+//		webs.add("amazon.com");
+//		webs.add("vk.com");
+//		webs.add("wikipedia.org");
+//		webs.add("vk.com");
+//		webs.add("twitter.com");
+//		webs.add("vk.com");
+//		webs.add("avito.ru");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("minomos.ru");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vk.com");
+//		webs.add("vlgregedu.ru");
+		
+		int N =8;
+		int START =0;
+		int FINISH = webs.size() / N;
+		int RANGE = FINISH;
+		
+		ArrayList<Thread> listTread= new ArrayList<Thread>();
+		for(int i=0; i< N; i++)
+		{
+			MyThread myThread = new MyThread(i+1, webs, START, FINISH);
+			Thread thread = new Thread(myThread);
+			listTread.add(thread);
+			thread.start();
+			
+			START+=RANGE;
+			FINISH+=RANGE;
+		}
+		
+		for(int i=0; i< N; i++)
+		{
+			listTread.get(i).join();
+		}
+			
 	}
 }

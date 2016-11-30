@@ -1,4 +1,4 @@
-package com.mycompany.app.java.lab1;
+package com.mycompany.app.java.lab2;
 
 import java.util.Arrays;
 import java.util.Collection;

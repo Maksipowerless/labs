@@ -10,7 +10,6 @@ public class ClientExample {
 		int port = 12345;
 		String address ="127.0.0.1";
 		InetAddress ipAddress = InetAddress.getByName(address);
-		
 		Socket s = new Socket(ipAddress, port);
 		
 	}

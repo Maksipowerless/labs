@@ -1,4 +1,4 @@
-package com.mycompany.app;
+package lab2Test;
 
 import static org.junit.Assert.assertTrue;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import com.mycompany.app.java.lab1.MyArrayList;
+import com.mycompany.app.java.lab2.MyArrayList;
 
 public class MyArrayListTest {
 
