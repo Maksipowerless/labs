@@ -60,7 +60,7 @@ public class lab3 {
 	public static void main(String[] args) throws IOException, InterruptedException {
 
 		ArrayList<String> webs = new ArrayList<String>();
-		webs.add("vk.com");
+		webs.add("aaa");
 		webs.add("vk.com");
 		webs.add("vk.com");
 		webs.add("vk.com");
